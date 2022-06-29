@@ -1,0 +1,33 @@
+
+
+
+<p-carousel [value]="weatherData" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+  <ng-template pTemplate="header">
+      <h5>Haftalık Hava Durumu</h5>
+  </ng-template>
+
+  <ng-template let-weather pTemplate="item">
+    <div class="weather-item">
+        <div class="weather-item-content">
+          <h5 class="mt-2">{{weather.day}}</h5>
+                <p>{{weather.date}}</p>
+            <div class="mb-3">
+                <img [src]="weather.icon" [alt]="weather.day" class="weather-image" />
+            </div>
+            <div>
+
+                <h4 class="mb-1">{{weather.description | uppercase}}</h4>
+
+                <h4>En Yüksek Sıcaklık</h4>
+                <h3 [ngStyle]="{color:'var(--red-600)'}" class="mt-0 mb-3">{{weather.max}}</h3>
+
+                <h4>En Düşük Sıcaklık</h4>
+                <h3 [ngStyle]="{color:'var(--blue-600)'}" class="mt-0 mb-3">{{weather.min}}</h3>
+
+
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+</p-carousel>
