@@ -16,7 +16,7 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: {
         'content-type': 'application/json',
-        authorization: 'apikey 2WPDKCk6roxO6oqxRNiGyJ:7yqji7q8rZNGQ574WsLxtK',
+        authorization: 'apikey apikeyapikey',
       },
     });
     return next.handle(request);
