@@ -1,7 +1,8 @@
 # WeatherApp
 ## Using CollectApi, PrimeNG
 
-<img src="/screen/nFgiO1_bd6c214b25d3529e374785e1d1047d63_00-00-00_00-00-26_1.gif>
+
+![](/screen/nFgiO1_bd6c214b25d3529e374785e1d1047d63_00-00-00_00-00-26_1.gif)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
 
