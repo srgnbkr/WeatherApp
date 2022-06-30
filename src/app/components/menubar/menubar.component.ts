@@ -22,6 +22,11 @@ export class MenubarComponent implements OnInit {
           label: 'Haberler',
           icon: 'pi pi-globe',
 
+      },
+      {
+        label:'Hava Durumu',
+        icon:'pi pi-globe',
+        routerLink:'/havadurumu/İSTANBUL'
       }
   ];
   }

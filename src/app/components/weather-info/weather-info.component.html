@@ -1,33 +1,72 @@
+<div class="card mt-4">
+  <div
+    class="flex justify-content-center flex-wrap card-container yellow-container"
+  >
+    <div class="flex align-items-center justify-content-center">
+      <p-dropdown
+        inputId="dropdown"
+        filterBy="cityName"
+        [filter]="true"
+        [autoDisplayFirst]="true"
+        (onChange)="(currentCity.cityName)"
+        [options]="cities"
+        optionLabel="cityName"
+        [(ngModel)]="currentCity"
+        routerLink="/havadurumu/{{ currentCity?.cityName }}"
+      ></p-dropdown>
+    </div>
+  </div>
+</div>
 
+<p-carousel
+  [value]="weatherData"
+  [numVisible]="4"
+  [numScroll]="3"
+  [circular]="false"
+  [responsiveOptions]="responsiveOptions"
+>
 
-
-<p-carousel [value]="weatherData" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
-  <ng-template pTemplate="header">
-      <h5>Haftalık Hava Durumu</h5>
-  </ng-template>
 
   <ng-template let-weather pTemplate="item">
-    <div class="weather-item">
-        <div class="weather-item-content">
-          <h5 class="mt-2">{{weather.day}}</h5>
-                <p>{{weather.date}}</p>
-            <div class="mb-3">
-                <img [src]="weather.icon" [alt]="weather.day" class="weather-image" />
-            </div>
-            <div>
-
-                <h4 class="mb-1">{{weather.description | uppercase}}</h4>
-
-                <h4>En Yüksek Sıcaklık</h4>
-                <h3 [ngStyle]="{color:'var(--red-600)'}" class="mt-0 mb-3">{{weather.max}}</h3>
-
-                <h4>En Düşük Sıcaklık</h4>
-                <h3 [ngStyle]="{color:'var(--blue-600)'}" class="mt-0 mb-3">{{weather.min}}</h3>
-
-
-            </div>
+    <div class="weather-item mt-2">
+      <div class="weather-item-content">
+        <h5 class="mt-2">{{ weather.day }}</h5>
+        <p>{{ weather.date }}</p>
+        <div class="mb-3">
+          <img [src]="weather.icon" [alt]="weather.day" class="weather-image" />
         </div>
-    </div>
-</ng-template>
+        <div>
+          <h4 class="mb-1">{{ weather.description | uppercase }}</h4>
 
+          <div class="grid">
+            <div class="col-6">
+              <h4>En Düşük Sıcaklık</h4>
+            <h3 [ngStyle]="{ color: 'var(--blue-600)' }" class="mt-0 mb-3">
+              {{ weather.min }} °C
+            </h3>
+            </div>
+            <div class="col-6">
+              <h4>En Yüksek Sıcaklık</h4>
+              <h3 [ngStyle]="{ color: 'var(--red-600)' }" class="mt-0 mb-3">
+                {{ weather.max }} °C
+              </h3>
+            </div>
+
+
+
+
+
+          </div>
+
+          <div class="field col-12">
+            <h5 class="mt-3">Nem Oranı</h5>
+            <p-knob
+              [(ngModel)]="weather.humidity"
+              valueTemplate="{value}%"
+            ></p-knob>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </p-carousel>

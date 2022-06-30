@@ -10,12 +10,12 @@ import { WeatherData } from 'src/app/models/weatherData';
 })
 export class WeatherService {
 
-  apiUrl:string = `${environment.baseAPiUrl}weather/getWeather?data.lang=tr&data.city=Aydın`
+  apiUrl:string = `${environment.baseAPiUrl}weather/getWeather?data.lang=tr&data.city=`
 
   constructor(private httpClient:HttpClient) { }
 
-  getWeather():Observable<ListResponseModel<WeatherData>>{
-    return this.httpClient.get<ListResponseModel<WeatherData>>(this.apiUrl).pipe(res=>res);
+  getWeather(cityName:string):Observable<ListResponseModel<WeatherData>>{
+    return this.httpClient.get<ListResponseModel<WeatherData>>(this.apiUrl+cityName).pipe(res=>res);
 
   }
 }

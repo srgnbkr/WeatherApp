@@ -8,4 +8,5 @@ export interface WeatherData{
   min: string;
   night: string;
   status: string;
+
 }

@@ -1,8 +1,10 @@
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 
 import {DropdownModule} from 'primeng/dropdown';
 import {CarouselModule} from 'primeng/carousel';
@@ -11,7 +13,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
-
+import {KnobModule} from 'primeng/knob';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,13 +33,16 @@ import { MenubarComponent } from './components/menubar/menubar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     CarouselModule,
     ButtonModule,
     DataViewModule,
     DropdownModule,
     MenubarModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    KnobModule
   ],
   providers: [
     {
